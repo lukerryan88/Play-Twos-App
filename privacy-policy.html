@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Twos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080808;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.09);
+      --gold: #d4a017;
+      --gold-dim: rgba(212,160,23,0.7);
+      --text: rgba(255,255,255,0.88);
+      --muted: rgba(255,255,255,0.45);
+      --red: #dc2626;
+    }
+
+    html { background: var(--bg); }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Background atmosphere */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 80%, rgba(212,160,23,0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Floating card decorations */
+    .floater {
+      position: fixed;
+      pointer-events: none;
+      opacity: 0.06;
+      font-size: 80px;
+      z-index: 0;
+    }
+    .f1 { top: 8%; left: 3%; transform: rotate(-18deg); }
+    .f2 { top: 15%; right: 4%; transform: rotate(14deg); }
+    .f3 { bottom: 20%; left: 2%; transform: rotate(12deg); }
+    .f4 { bottom: 10%; right: 5%; transform: rotate(-9deg); }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .bomb-emoji {
+      font-size: 48px;
+      filter: drop-shadow(0 0 12px rgba(212,160,23,0.5));
+    }
+
+    .brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      letter-spacing: 4px;
+      color: #fff;
+      line-height: 1;
+      text-shadow: 0 2px 20px rgba(212,160,23,0.3);
+    }
+
+    .page-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 6px;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .last-updated {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    /* Divider */
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 20px auto 0;
+    }
+
+    /* Sections */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 28px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(212,160,23,0.12);
+      border: 1px solid rgba(212,160,23,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.3px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 6px 0 6px 22px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '♦';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 9px;
+      top: 9px;
+    }
+
+    strong {
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: rgba(212,160,23,0.07);
+      border: 1px solid rgba(212,160,23,0.25);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .contact-card .bomb-small { font-size: 32px; margin-bottom: 10px; }
+
+    .contact-card p {
+      margin-bottom: 14px;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 10px;
+      background: rgba(212,160,23,0.12);
+      border: 1px solid rgba(212,160,23,0.35);
+      transition: background 0.2s;
+    }
+    .contact-card a:hover {
+      background: rgba(212,160,23,0.2);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1px;
+    }
+
+    /* Card suit accent in footer */
+    .suits {
+      font-size: 16px;
+      color: rgba(255,255,255,0.1);
+      letter-spacing: 6px;
+      margin-bottom: 8px;
+    }
+
+    /* Highlight badge */
+    .badge {
+      display: inline-block;
+      background: rgba(34,197,94,0.12);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: #86efac;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating decorations -->
+  <div class="floater f1">🂢</div>
+  <div class="floater f2">🂱</div>
+  <div class="floater f3">🂺</div>
+  <div class="floater f4">🃁</div>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo-row">
+        <span class="bomb-emoji">💣</span>
+        <span class="brand">Twos</span>
+      </div>
+      <div class="page-title">Privacy Policy</div>
+      <div class="last-updated">Effective Date: June 1, 2025 &nbsp;·&nbsp; Last Updated: June 1, 2025</div>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Intro -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">👋</div>
+        <h2>Overview</h2>
+      </div>
+      <p>Welcome to <strong>Twos</strong>, the social card game. This Privacy Policy explains how we collect, use, and protect information when you use the Twos app ("App"). We take your privacy seriously and keep data collection to the minimum required to make the game work.</p>
+      <p>By using Twos, you agree to this policy. If you do not agree, please discontinue use of the App.</p>
+    </div>
+
+    <!-- What we collect -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <h2>Information We Collect</h2>
+      </div>
+      <ul>
+        <li><strong>Account Information</strong> — When you sign in, we collect your email address to identify you across game sessions.</li>
+        <li><strong>Display Name</strong> — The name you choose to appear as in games and lobbies.</li>
+        <li><strong>Gameplay Data</strong> — Game results, win/loss records, win streaks, and number of games played to power your stats.</li>
+        <li><strong>In-Game Chat Messages</strong> — Messages sent during a game session are stored temporarily to enable real-time multiplayer chat.</li>
+        <li><strong>Emoji Reactions</strong> — Emoji reactions sent during games are recorded as part of gameplay data.</li>
+        <li><strong>Device & Usage Data</strong> — Basic usage information (such as app version and device type) to help diagnose bugs and improve performance.</li>
+      </ul>
+      <p style="margin-top:14px;">We do <strong>not</strong> collect payment information, precise location, contacts, camera or microphone access, or any biometric data.</p>
+    </div>
+
+    <!-- How we use it -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚙️</div>
+        <h2>How We Use Your Information</h2>
+      </div>
+      <ul>
+        <li>To enable <strong>real-time multiplayer gameplay</strong> by syncing game state between players</li>
+        <li>To display your <strong>player stats, win streaks, and standings</strong> in the app</li>
+        <li>To power the <strong>in-game chat</strong> and emoji reaction features</li>
+        <li>To match you in <strong>online game rooms</strong> with other players</li>
+        <li>To support the <strong>rematch system</strong> so players can continue games</li>
+        <li>To improve the App through <strong>bug reports and analytics</strong></li>
+      </ul>
+    </div>
+
+    <!-- Data sharing -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🤝</div>
+        <h2>Data Sharing & Third Parties</h2>
+      </div>
+      <p>We do <strong>not sell your personal data</strong> to anyone, ever.</p>
+      <p>Twos is built on <strong>Base44</strong>, a development platform that provides backend infrastructure including authentication, real-time data sync, and data storage. Your data is stored on Base44's servers. Base44's own privacy practices apply to data processed through their infrastructure.</p>
+      <p>We do not share your data with advertisers, data brokers, or any other third parties outside of infrastructure providers necessary to operate the App.</p>
+    </div>
+
+    <!-- Data retention -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🗓️</div>
+        <h2>Data Retention</h2>
+      </div>
+      <p>Game room and chat data is retained while the game is active and for a short period afterward to support rematches. Player stats (wins, streaks, games played) are retained for as long as your account is active so your history is preserved across sessions.</p>
+      <p>If you would like your data deleted, contact us at the email below and we will remove your account data promptly.</p>
+    </div>
+
+    <!-- Children -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">👶</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>Twos is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal data, we will delete it immediately.</p>
+      <p>If you are a parent or guardian and believe your child has provided us with information, please contact us.</p>
+    </div>
+
+    <!-- Your rights -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <h2>Your Rights</h2>
+      </div>
+      <ul>
+        <li><strong>Access</strong> — Request a copy of the data we hold about you</li>
+        <li><strong>Correction</strong> — Ask us to correct inaccurate information</li>
+        <li><strong>Deletion</strong> — Request deletion of your account and associated data</li>
+        <li><strong>Opt-out</strong> — Stop using the App at any time; we will not contact you unsolicited</li>
+      </ul>
+      <p style="margin-top:14px;">To exercise any of these rights, email us at the address below.</p>
+    </div>
+
+    <!-- Security -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔒</div>
+        <h2>Security</h2>
+      </div>
+      <p>We use industry-standard practices to protect your data, including encrypted transmission (HTTPS/TLS) and secure authentication via Base44's platform. No method of transmission over the internet is 100% secure, but we take reasonable steps to protect your information.</p>
+    </div>
+
+    <!-- Changes -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📝</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last Updated" date at the top of this page. Continued use of the App after any changes constitutes acceptance of the updated policy. We encourage you to review this page periodically.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-card">
+      <div class="bomb-small">💣</div>
+      <p>Questions about this policy or want to request data deletion?</p>
+      <a href="mailto:privacy@playtwos.app">privacy@playtwos.app</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="suits">♠ ♥ ♦ ♣</div>
+      <div>© 2025 Twos · playtwos.app · All rights reserved</div>
+    </div>
+
+  </div>
+</body>
+</html>
